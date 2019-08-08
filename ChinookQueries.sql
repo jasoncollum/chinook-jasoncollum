@@ -25,4 +25,12 @@
 -- Provide a query showing a unique/distinct list of billing countries from the Invoice table.
 -- SELECT DISTINCT BillingCountry FROM Invoice;
 
-6.
+-- 6. sales_agent_invoices.sql: 
+-- Provide a query that shows the invoices associated with each sales agent. 
+-- The resultant table should include the Sales Agent's full name.
+-- SELECT i.InvoiceId, i.CustomerId, i.InvoiceDate, i.BillingAddress, i.BillingCity, i.BillingState, i.BillingCountry,
+--     i.BillingPostalCode, i.Total, e.FirstName, e.LastName
+--     FROM Invoice i
+--     JOIN Employee e ON i.BillingCountry = e.Country;
+
+7.
