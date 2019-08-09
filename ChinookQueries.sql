@@ -78,3 +78,36 @@
 
 -- 13. line_item_track_artist.sql: 
 -- Provide a query that includes the purchased track name AND artist name with each invoice line item.
+-- SELECT il.InvoiceLineId, t.Name AS TrackName, ar.Name AS ArtistName
+-- FROM InvoiceLine il
+-- JOIN Track t ON t.TrackId = il.TrackId
+-- JOIN Album al ON al.AlbumId = t.AlbumId
+-- JOIN Artist ar ON ar.ArtistId = ar.ArtistId
+-- ORDER BY il.InvoiceLineId ASC;
+
+-- 14. country_invoices.sql: 
+-- Provide a query that shows the # of invoices per country. 
+-- HINT: GROUP BY
+-- SELECT COUNT(*) AS InvoiceTotal, BillingCountry
+-- FROM Invoice
+-- GROUP BY BillingCountry;
+
+-- 15. playlists_track_count.sql: 
+-- Provide a query that shows the total number of tracks in each playlist. 
+-- The Playlist name should be include on the resulant table.
+-- SELECT pl.Name AS PlaylistName, COUNT(*) AS TrackName
+-- FROM Playlist pl
+-- JOIN PlaylistTrack pt ON pt.PlaylistId = pl.PlaylistId
+-- JOIN Track tr ON tr.TrackId = pt.TrackId
+-- GROUP BY pl.Name;
+
+-- 16. tracks_no_id.sql: 
+-- Provide a query that shows all the Tracks, but displays no IDs. 
+-- The result should include the Album name, Media type and Genre.
+-- SELECT al.Title AS AlbumTitle, mt.Name AS MediaType, g.Name AS Genre
+-- FROM Track tr
+-- JOIN Album al ON al.AlbumId = tr.AlbumId
+-- JOIN MediaType mt ON mt.MediaTypeId = tr.MediaTypeId
+-- JOIN Genre g ON g.GenreId = tr.GenreId;
+
+17.
