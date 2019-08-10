@@ -110,4 +110,22 @@
 -- JOIN MediaType mt ON mt.MediaTypeId = tr.MediaTypeId
 -- JOIN Genre g ON g.GenreId = tr.GenreId;
 
-17.
+-- 17. invoices_line_item_count.sql: 
+-- Provide a query that shows all Invoices but includes the # of invoice line items.
+-- SELECT i.InvoiceId, COUNT(il.InvoiceLineId) AS LineItemsNum
+-- FROM Invoice i
+-- JOIN InvoiceLine il ON il.InvoiceId = i.InvoiceId
+-- GROUP BY i.InvoiceId;
+
+-- 18. sales_agent_total_sales.sql: 
+-- Provide a query that shows total sales made by each sales agent.
+-- SELECT e.FirstName, e.LastName, SUM(i.Total) AS TotalSales
+--     FROM Employee e
+--     LEFT JOIN Customer c ON c.SupportRepId = e.EmployeeId
+--     LEFT JOIN Invoice i ON i.CustomerId = c.CustomerId
+--     WHERE e.Title = 'Sales Support Agent'
+--     GROUP BY e.FirstName, e.LastName;
+
+-- 19. top_2009_agent.sql: 
+-- Which sales agent made the most in sales in 2009?
+-- Hint: Use the MAX function on a subquery.
